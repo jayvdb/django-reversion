@@ -52,7 +52,7 @@ class CreateInitialRevisionsAppLabelTest(TestModelMixin, TestBase):
 
 
 class CreateInitialRevisionsDbTest(TestModelMixin, TestBase):
-    databases = {"default", "mysql", "postgres"}
+    databases = {"default"}
 
     def testCreateInitialRevisionsDb(self):
         obj = TestModel.objects.create()
@@ -68,7 +68,7 @@ class CreateInitialRevisionsDbTest(TestModelMixin, TestBase):
 
 
 class CreateInitialRevisionsModelDbTest(TestModelMixin, TestBase):
-    databases = {"default", "postgres"}
+    databases = {"default"}
 
     def testCreateInitialRevisionsModelDb(self):
         obj = TestModel.objects.db_manager("postgres").create()
@@ -136,7 +136,7 @@ class DeleteRevisionsAppLabelTest(TestModelMixin, TestBase):
 
 
 class DeleteRevisionsDbTest(TestModelMixin, TestBase):
-    databases = {"default", "mysql", "postgres"}
+    databases = {"default"}
 
     def testDeleteRevisionsDb(self):
         with reversion.create_revision(using="postgres"):
@@ -158,7 +158,7 @@ class DeleteRevisionsDbTest(TestModelMixin, TestBase):
 
 
 class DeleteRevisionsModelDbTest(TestModelMixin, TestBase):
-    databases = {"default", "postgres"}
+    databases = {"default"}
 
     def testDeleteRevisionsModelDb(self):
         with reversion.create_revision():

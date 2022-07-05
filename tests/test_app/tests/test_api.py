@@ -173,7 +173,7 @@ class CreateRevisionManageManuallyTest(TestModelMixin, TestBase):
 
 
 class CreateRevisionDbTest(TestModelMixin, TestBase):
-    databases = {"default", "mysql", "postgres"}
+    databases = {"default"}
 
     def testCreateRevisionMultiDb(self):
         with reversion.create_revision(using="mysql"), reversion.create_revision(using="postgres"):
@@ -324,7 +324,7 @@ class GetDateCreatedTest(TestBase):
 
 
 class AddMetaTest(TestModelMixin, TestBase):
-    databases = {"default", "mysql", "postgres"}
+    databases = {"default"}
 
     def testAddMeta(self):
         with reversion.create_revision():
